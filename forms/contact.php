@@ -15,13 +15,13 @@
     die( 'Unable to load the "PHP Email Form" Library!');
   }
 
-  $contact = new PHP_Email_Form;
-  $contact->ajax = true;
+ // $contact = new PHP_Email_Form;
+//  $contact->ajax = true;
   
-  $contact->to = $receiving_email_address;
-  $contact->from_name = $_POST['name'];
-  $contact->from_email = $_POST['email'];
-  $contact->subject = $_POST['subject'];
+//  $contact->to = $receiving_email_address;
+//  $contact->from_name = $_POST['name'];
+////  $contact->from_email = $_POST['email'];
+ // $contact->subject = $_POST['subject'];
 
   // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
   /*
@@ -33,9 +33,9 @@
   );
   */
 
-  $contact->add_message( $_POST['name'], 'From');
-  $contact->add_message( $_POST['email'], 'Email');
-  $contact->add_message( $_POST['message'], 'Message', 10);
+ // $contact->add_message( $_POST['name'], 'From');
+ //// $contact->add_message( $_POST['email'], 'Email');
+ // $contact->add_message( $_POST['message'], 'Message', 10);
 
   $to = 'nikhil.joseph01@gmail.com'; // Add your email address inbetween the '' replacing yourname@yourdomain.com - This is where the form will send a message to.
 $email_subject = "Website Contact Form:  $name";
@@ -44,5 +44,5 @@ $headers = "From: noreply@yourdomain.com\n"; // This is the email address the ge
 $headers .= "Reply-To: $email_address";	
 
   mail($to,$email_subject,$email_body,$headers);
-  echo $contact->send();
+  //echo $contact->send();
 ?>
